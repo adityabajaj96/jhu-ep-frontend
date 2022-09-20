@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #000000;
+}
+
+section {
+    margin: 16px 20px;
+    border: 1px solid #000000;
+    background-color: #b6d0eb;
+}
+
+section > * {
+    margin: 2px;
+    padding: 4px 8px 4px 8px;
+    clear: right;
+}
+
+.navbar-brand h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .75;
+}
+
+#header-menu {
+    margin-top: 0px;
+}
+
+@media (max-width: 767px) {
+    #collapsable-nav {
+        background-color: #c0f1e1;
+    }
+    #collapsable-nav hr {
+        margin: 5px;
+    }
+    #collapsable-nav a{
+        color: #000000;
+    }
+}
