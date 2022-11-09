@@ -1,0 +1,21 @@
+<div>
+  <table class="table table-hover" ng-if="found.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">Short Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Remove Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in found">
+        <th scope="row">{{ item.short_name }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td><button class="btn btn-danger" ng-click="onRemove({index: $index});">Don't want this one!</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-danger" ng-if="found.length === 0">Nothing found</div>
+</div>
