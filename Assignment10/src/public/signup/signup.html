@@ -1,0 +1,50 @@
+<div class="container">
+  <h2 id="signup-title" class="text-center">Sign Up</h2>
+
+  <fieldset>
+    <form name='signupForm' novalidate>
+
+      <input type="text" name="firstName" placeholder="First Name" ng-model="signupCtrl.firstName" required>
+      <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
+        First name is required
+      </span>
+      <br>
+
+      <input type="text" name="lastName" placeholder="Last Name" ng-model="signupCtrl.lastName" required>
+      <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
+        Last name is required
+      </span>
+      <br>
+
+      <input type="email" name="email" placeholder="Email" ng-model="signupCtrl.email" required>
+      <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signupCtrl.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})" required>
+      <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+        Phone number must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="favoriteDish" placeholder="Menu Number" ng-model="signupCtrl.favoriteDish"
+        ng-model-options="{ updateOn: 'blur'}" favorite-dish required>
+      <span ng-if="signupForm.favoriteDish.$error.required && signupForm.favoriteDish.$touched">
+        Favorite dish is required
+      </span>
+      <span ng-if="signupForm.favoriteDish.$error.favoriteDish && signupForm.favoriteDish.$touched">
+        No such menu number exists
+      </span>
+      <br>
+
+      <button class="btn btn-secondary" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+    </form>
+  </fieldset>
+
+  <div ng-if="signupCtrl.saved">
+    Your information has been saved
+  </div>
+
+</div>
